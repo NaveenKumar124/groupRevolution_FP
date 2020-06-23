@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		128A480C24A29E880090732E /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A480B24A29E870090732E /* NotesTableViewController.swift */; };
+		128A480E24A2A4260090732E /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A480D24A2A4260090732E /* NotesTableViewCell.swift */; };
 		4F695AD724A19C7B00ECB91F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F695AD624A19C7B00ECB91F /* AppDelegate.swift */; };
 		4F695AD924A19C7B00ECB91F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F695AD824A19C7B00ECB91F /* SceneDelegate.swift */; };
 		4F695ADB24A19C7B00ECB91F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F695ADA24A19C7B00ECB91F /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		128A480B24A29E870090732E /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
+		128A480D24A2A4260090732E /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
 		4F695AD324A19C7B00ECB91F /* groupRevolution_FP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = groupRevolution_FP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F695AD624A19C7B00ECB91F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F695AD824A19C7B00ECB91F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				4F695AE724A19C7E00ECB91F /* Info.plist */,
 				4F695ADF24A19C7B00ECB91F /* groupRevolution_FP.xcdatamodeld */,
 				128A480B24A29E870090732E /* NotesTableViewController.swift */,
+				128A480D24A2A4260090732E /* NotesTableViewCell.swift */,
 			);
 			path = groupRevolution_FP;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				4F695AD724A19C7B00ECB91F /* AppDelegate.swift in Sources */,
 				4F695AD924A19C7B00ECB91F /* SceneDelegate.swift in Sources */,
 				128A480C24A29E880090732E /* NotesTableViewController.swift in Sources */,
+				128A480E24A2A4260090732E /* NotesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
