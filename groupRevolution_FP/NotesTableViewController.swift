@@ -1,14 +1,19 @@
 //
-//  NotesTVCTableViewController.swift
+//  NotesTableViewController.swift
 //  groupRevolution_FP
 //
 //  Created by Syed Nooruddin Fahad on 23/06/20.
 //  Copyright © 2020 Naveen Kumar. All rights reserved.
 //
 
+import CoreData
 import UIKit
 
-class NotesTVCTableViewController: UITableViewController {
+class NotesTableViewController: UITableViewController {
+    
+    var folderName: String?
+    var note: [NSManagedObject]?
+    var context: NSManagedObjectContext?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +29,12 @@ class NotesTVCTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return note?.count ?? 0
     }
 
     /*
