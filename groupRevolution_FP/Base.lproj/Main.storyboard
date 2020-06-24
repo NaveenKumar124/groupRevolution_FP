@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -134,6 +135,7 @@
                                     <outlet property="locationLabel" destination="c8x-5j-K03" id="RHM-hR-rEs"/>
                                     <outlet property="timeLabel" destination="uL0-Ub-LMq" id="OQh-C5-X1v"/>
                                     <outlet property="titleLabel" destination="xLk-jE-ADt" id="fQc-fD-DMK"/>
+                                    <segue destination="HcI-oH-3WS" kind="show" id="Lob-pW-1Xs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -145,12 +147,44 @@
                     <navigationItem key="navigationItem" title="Notes" id="FKo-32-lvd">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="oAX-PT-Bh8">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="HcI-oH-3WS" kind="show" id="ipI-Em-hSD"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOA-EI-lpf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4466.666666666667" y="129.91071428571428"/>
+        </scene>
+        <!--Add Notes-->
+        <scene sceneID="WJD-B1-MOi">
+            <objects>
+                <viewController id="HcI-oH-3WS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yg1-NW-emE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KDn-oZ-nx9">
+                                <rect key="frame" x="20" y="108" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Spd-xe-dG6"/>
+                                    <constraint firstAttribute="height" constant="150" id="t5q-38-UBn"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KDn-oZ-nx9" firstAttribute="leading" secondItem="lmj-gb-MDW" secondAttribute="leading" constant="20" id="NgY-Ow-ppd"/>
+                            <constraint firstItem="KDn-oZ-nx9" firstAttribute="top" secondItem="lmj-gb-MDW" secondAttribute="top" constant="20" id="rqH-qn-r7v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lmj-gb-MDW"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Notes" id="SBG-L9-Z9E"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UIh-fF-lHB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5229" y="131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nao-Vz-6PQ">
@@ -173,6 +207,9 @@
             <point key="canvasLocation" x="2689.8550724637685" y="129.91071428571428"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ipI-Em-hSD"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
     </resources>
