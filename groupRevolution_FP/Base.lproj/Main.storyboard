@@ -9,7 +9,7 @@
         <!--Folders-->
         <scene sceneID="53h-It-BLT">
             <objects>
-                <tableViewController id="wtZ-E9-9TP" sceneMemberID="viewController">
+                <tableViewController id="wtZ-E9-9TP" customClass="CategoriesTVC" customModule="groupRevolution_FP" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sYc-xp-fMH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,7 +44,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="OKm-CU-Vf3" kind="show" id="cEl-xb-SrX"/>
+                                    <segue destination="OKm-CU-Vf3" kind="show" id="VNt-FT-I55"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -60,9 +60,15 @@
                     <navigationItem key="navigationItem" title="Folders" id="css-W9-Fi3">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="f1z-0f-mo9">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addNewCategory:" destination="wtZ-E9-9TP" id="vng-gs-T6Z"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mySearchBar" destination="nVo-gZ-X3k" id="fly-tA-adH"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0p-He-bG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

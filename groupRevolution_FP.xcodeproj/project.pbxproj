@@ -16,6 +16,7 @@
 		4F695AE124A19C7B00ECB91F /* groupRevolution_FP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F695ADF24A19C7B00ECB91F /* groupRevolution_FP.xcdatamodeld */; };
 		4F695AE324A19C7E00ECB91F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F695AE224A19C7E00ECB91F /* Assets.xcassets */; };
 		4F695AE624A19C7E00ECB91F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F695AE424A19C7E00ECB91F /* LaunchScreen.storyboard */; };
+		4F695AF224A2E02E00ECB91F /* CategoriesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F695AF124A2E02E00ECB91F /* CategoriesTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4F695AE224A19C7E00ECB91F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F695AE524A19C7E00ECB91F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F695AE724A19C7E00ECB91F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F695AF124A2E02E00ECB91F /* CategoriesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		4F695AD524A19C7B00ECB91F /* groupRevolution_FP */ = {
 			isa = PBXGroup;
 			children = (
+				4F695AF024A2DFD000ECB91F /* Controllers */,
 				4F695AD624A19C7B00ECB91F /* AppDelegate.swift */,
 				4F695AD824A19C7B00ECB91F /* SceneDelegate.swift */,
 				4F695ADA24A19C7B00ECB91F /* ViewController.swift */,
@@ -70,10 +73,18 @@
 				4F695AE424A19C7E00ECB91F /* LaunchScreen.storyboard */,
 				4F695AE724A19C7E00ECB91F /* Info.plist */,
 				4F695ADF24A19C7B00ECB91F /* groupRevolution_FP.xcdatamodeld */,
+			);
+			path = groupRevolution_FP;
+			sourceTree = "<group>";
+		};
+		4F695AF024A2DFD000ECB91F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4F695AF124A2E02E00ECB91F /* CategoriesTVC.swift */,
 				128A480B24A29E870090732E /* NotesTableViewController.swift */,
 				128A480D24A2A4260090732E /* NotesTableViewCell.swift */,
 			);
-			path = groupRevolution_FP;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +163,7 @@
 				4F695AD724A19C7B00ECB91F /* AppDelegate.swift in Sources */,
 				4F695AD924A19C7B00ECB91F /* SceneDelegate.swift in Sources */,
 				128A480C24A29E880090732E /* NotesTableViewController.swift in Sources */,
+				4F695AF224A2E02E00ECB91F /* CategoriesTVC.swift in Sources */,
 				128A480E24A2A4260090732E /* NotesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
