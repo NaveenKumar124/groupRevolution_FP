@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120B53E424A419380083339D /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B53E324A419380083339D /* AddNoteViewController.swift */; };
 		128A480C24A29E880090732E /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A480B24A29E870090732E /* NotesTableViewController.swift */; };
 		128A480E24A2A4260090732E /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A480D24A2A4260090732E /* NotesTableViewCell.swift */; };
 		4F695AD724A19C7B00ECB91F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F695AD624A19C7B00ECB91F /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		120B53E324A419380083339D /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		128A480B24A29E870090732E /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
 		128A480D24A2A4260090732E /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
 		4F695AD324A19C7B00ECB91F /* groupRevolution_FP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = groupRevolution_FP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +85,7 @@
 				4F695AF124A2E02E00ECB91F /* CategoriesTVC.swift */,
 				128A480B24A29E870090732E /* NotesTableViewController.swift */,
 				128A480D24A2A4260090732E /* NotesTableViewCell.swift */,
+				120B53E324A419380083339D /* AddNoteViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				4F695ADB24A19C7B00ECB91F /* ViewController.swift in Sources */,
 				4F695AD724A19C7B00ECB91F /* AppDelegate.swift in Sources */,
 				4F695AD924A19C7B00ECB91F /* SceneDelegate.swift in Sources */,
+				120B53E424A419380083339D /* AddNoteViewController.swift in Sources */,
 				128A480C24A29E880090732E /* NotesTableViewController.swift in Sources */,
 				4F695AF224A2E02E00ECB91F /* CategoriesTVC.swift in Sources */,
 				128A480E24A2A4260090732E /* NotesTableViewCell.swift in Sources */,
