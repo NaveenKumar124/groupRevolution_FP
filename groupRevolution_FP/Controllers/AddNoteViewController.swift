@@ -12,6 +12,19 @@ import CoreLocation
 import UIKit
 
 class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate , AVAudioRecorderDelegate {
+    
+     @IBOutlet weak var txtTitle: UITextField!
+    @IBOutlet weak var catagoryTextField: UITextField!
+    @IBOutlet weak var txtDescription: UITextView!
+    
+     @IBOutlet weak var noteImageView: UIImageView!
+    
+    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var playButton: UIButton!
+
+    @IBOutlet weak var icMap: UIBarButtonItem!
+    
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
