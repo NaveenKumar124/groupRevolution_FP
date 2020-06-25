@@ -158,6 +158,47 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
        func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
            playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
        }
+    @IBAction func btnSave(_ sender: UIButton) {
+        
+        if isNewNote{
+            
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Notes")
+            do{
+                let results = try self.context!.fetch(request)
+                var alreadyExists = false
+                if results.count > 0{
+                    for result in results as! [NSManagedObject]{
+                        if txtTitle.text! == result.value(forKey: "title") as! String{
+                            alreadyExists = true
+                            break
+                        }
+                    }
+                }
+                
+                if !alreadyExists {
+                    if (txtTitle.text!.isEmpty || txtDescription.text! == "Write note...." || txtDescription.text!.isEmpty || catagoryTextField.text!.isEmpty){
+                        // empty field
+                        okAlert(title: "None of the fields can be empty!!")
+                        
+                    }else{
+                        self.addData()
+                        isNewNote = false
+                    }
+                    
+                } else{
+                    okAlert(title: "Note with name '\(txtTitle.text!)' already exists!")
+                    isNewNote = true
+                }
+            }catch{
+                print(error)
+            }
+            
+        }else{
+            
+            addData()
+            
+        }
+    }
     
     
 
