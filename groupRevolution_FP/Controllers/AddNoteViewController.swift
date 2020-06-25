@@ -358,22 +358,22 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
            picker.dismiss(animated: true, completion: nil)
        }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let dest = segue.destination as? MapVC{
+        if let dest = segue.destination as? MapViewController{
             dest.segueLatitude = newNote?.value(forKey: "lat") as! Double
             dest.segueLongitude = newNote?.value(forKey: "long") as! Double
             
         }
-        if let iv = segue.destination as? ViewController{
-            
-            iv.image = noteImageView.image
-            
-        }
-    }*/
+//        if let iv = segue.destination as? ViewController{
+//
+//            iv.image = noteImageView.image
+//
+//        }
+    }
     
 
 }
