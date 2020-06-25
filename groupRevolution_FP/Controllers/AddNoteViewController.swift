@@ -200,8 +200,32 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
     
+    func addData(){
+        if isNewNote{
+            newNote = NSEntityDescription.insertNewObject(forEntityName: "Notes", into: context!)
+        }
+        
+        newNote!.setValue(txtTitle.text!, forKey: "title")
+        newNote!.setValue(txtDescription.text!, forKey: "descp")
+        newNote!.setValue(categoryName!, forKey: "category")
+        let createdDate =  isNewNote ? Date() : (newNote?.value(forKey: "dateTime")! as! Date)
+        newNote!.setValue(createdDate, forKey: "dateTime")
+        newNote!.setValue(catagoryTextField.text!.uppercased(), forKey: "category")
+        let lat = isNewNote ? currentLocation.latitude : newNote?.value(forKey: "lat") as! Double
+        newNote?.setValue(lat, forKey: "lat")
+        let long = isNewNote ? currentLocation.longitude : newNote?.value(forKey: "long") as! Double
+        newNote?.setValue(long, forKey: "long")
+        
+        updateCatagoryList()
+        // save image to file
+        saveImageToFile()
+        saveData()
+        
+        isToSave = true
+        okAlert(title: isNewNote ? "Note saved successfully!!" : "Updated successfully!!")
     
-
+    }
+    
     
     /*
     // MARK: - Navigation
