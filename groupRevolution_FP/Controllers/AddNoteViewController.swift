@@ -11,13 +11,13 @@ import CoreData
 import CoreLocation
 import UIKit
 
-class z: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate , AVAudioRecorderDelegate {
+class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate , AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     
-     @IBOutlet weak var txtTitle: UITextField!
+    @IBOutlet weak var txtTitle: UITextField!
     @IBOutlet weak var catagoryTextField: UITextField!
     @IBOutlet weak var txtDescription: UITextView!
     
-     @IBOutlet weak var noteImageView: UIImageView!
+    @IBOutlet weak var noteImageView: UIImageView!
     
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
@@ -69,6 +69,17 @@ class z: UIViewController, UIImagePickerControllerDelegate, UINavigationControll
         }
     }
     
+    @objc func onTapped(){
+        txtTitle.resignFirstResponder()
+        txtDescription.resignFirstResponder()
+        catagoryTextField.resignFirstResponder()
+    }
+    
+    //get user's current location
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        currentLocation = manager.location!.coordinate
+    }
+    
     // MARK: - file functions
     func getFilePath(_ fileName: String)->String{
         
@@ -81,6 +92,75 @@ class z: UIViewController, UIImagePickerControllerDelegate, UINavigationControll
         }
         return ""
     }
+    
+    //MARK: Record audio
+    
+    @IBAction func recordButtonPressed(_ sender: UIButton) {
+        if !isRecording {
+            playButton.isHidden = true
+            recordButton.backgroundColor = #colorLiteral(red: 0.006370984018, green: 0.4774341583, blue: 0.9984987378, alpha: 1)
+            
+            if audioRecorder == nil {
+                //self.records += 1
+                
+                let url = URL(fileURLWithPath: getFilePath("/\(txtTitle.text!)_aud.m4a"))
+                
+                let settings = [AVFormatIDKey : kAudioFormatAppleLossless , AVEncoderAudioQualityKey : AVAudioQuality.high.rawValue , AVEncoderBitRateKey : 320000 , AVNumberOfChannelsKey : 1 , AVSampleRateKey : 44100] as [String : Any]
+                
+                do {
+                    audioRecorder = try AVAudioRecorder(url: url, settings: settings)
+                    audioRecorder?.delegate = self
+                    audioRecorder?.record()
+                    isRecording = true
+                } catch  {
+                    print(error)
+                }
+            }
+        }
+            
+        else{
+            audioRecorder?.stop()
+            audioRecorder = nil
+            recordButton.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+            isRecording = false
+            playButton.isHidden = false
+        }
+    }
+    
+    // Mark: Play Audio
+    @IBAction func playButtonPressed(_ sender: UIButton) {
+        
+        if !isPlaying{
+            do {
+                let url = URL(fileURLWithPath: getFilePath("/\(txtTitle.text!)_aud.m4a"))
+                
+                audioPlayer =  try AVAudioPlayer(contentsOf: url)
+                audioPlayer.prepareToPlay()
+                audioPlayer.delegate = self
+                audioPlayer.play()
+                playButton.setImage(UIImage(systemName: "stop.fill"), for: .normal)
+                isPlaying = true
+            } catch  {
+                print(error)
+               
+            }
+        }else{
+            
+            audioPlayer.stop()
+            playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            isPlaying = false
+            
+        }
+    }
+    
+    // MARK: AudioPlayer finish Playing
+       
+       func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+           playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+       }
+    
+    
+
     
     /*
     // MARK: - Navigation

@@ -34,9 +34,9 @@ class CategoriesTVC: UITableViewController, UISearchBarDelegate {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-//        self.navigationItem.rightBarButtonItem = self.editButtonItem
-//        self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.8857288957, green: 0.9869052768, blue: 0.9952554107, alpha: 1)
-//        
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.8857288957, green: 0.9869052768, blue: 0.9952554107, alpha: 1)
+  
         loadData()
     }
 
@@ -161,7 +161,6 @@ class CategoriesTVC: UITableViewController, UISearchBarDelegate {
                 if !alreadyExists{
                     self.addData(name: folderName)
                 } else{
-                    //                    self.alert(title: "Folder already exsists", message: "Please try other name")
                     self.okAlert(title: "Duplicate folder!", message: "Please try another folder name.")
                 }
                 }catch{
@@ -316,14 +315,21 @@ class CategoriesTVC: UITableViewController, UISearchBarDelegate {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if let destination = segue.destination as? NotesTableViewController{
+            destination.folderName = (sender as! UITableViewCell).textLabel?.text
+            
+        }
     }
-    */
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+    }
 
 }
