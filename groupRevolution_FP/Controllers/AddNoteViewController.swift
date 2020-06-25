@@ -51,6 +51,32 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        catagoryTextField.text = categoryName!
+        recordButton.layer.cornerRadius = 30
+        playButton.layer.cornerRadius = 30
+        txtDescription.delegate = self
+        
+         recordingSession = AVAudioSession.sharedInstance()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        context = appDelegate.persistentContainer.viewContext
+        
+        //check if it is new note or note to be edit.
+        if !isNewNote{
+            playButton.isHidden = false
+            showCurrentNote(noteTitle!)
+            // show all data to user
+           
+            icMap.isEnabled = true
+            navigationItem.title = "Edit note"
+        }else{
+            playButton.isHidden = true
+            icMap.isEnabled = false
+            AVAudioSession.sharedInstance().requestRecordPermission { (granted) in
+                
+                if !granted{}
+            }
+        }
     }
     
     func showCurrentNote(_ title: String){
