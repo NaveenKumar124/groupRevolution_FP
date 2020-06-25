@@ -20,6 +20,7 @@
 		4F695AE624A19C7E00ECB91F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F695AE424A19C7E00ECB91F /* LaunchScreen.storyboard */; };
 		4F695AF224A2E02E00ECB91F /* CategoriesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F695AF124A2E02E00ECB91F /* CategoriesTVC.swift */; };
 		4F695AF424A509B200ECB91F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F695AF324A509B200ECB91F /* MapViewController.swift */; };
+		4F695AF724A50BA500ECB91F /* Annotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F695AF624A50BA500ECB91F /* Annotations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		4F695AE724A19C7E00ECB91F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F695AF124A2E02E00ECB91F /* CategoriesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTVC.swift; sourceTree = "<group>"; };
 		4F695AF324A509B200ECB91F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		4F695AF624A50BA500ECB91F /* Annotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		4F695AD524A19C7B00ECB91F /* groupRevolution_FP */ = {
 			isa = PBXGroup;
 			children = (
+				4F695AF524A50B7700ECB91F /* View */,
 				4F695AF024A2DFD000ECB91F /* Controllers */,
 				4F695AD624A19C7B00ECB91F /* AppDelegate.swift */,
 				4F695AD824A19C7B00ECB91F /* SceneDelegate.swift */,
@@ -94,6 +97,14 @@
 				4F695AF324A509B200ECB91F /* MapViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4F695AF524A50B7700ECB91F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F695AF624A50BA500ECB91F /* Annotations.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +181,7 @@
 			files = (
 				4F695AE124A19C7B00ECB91F /* groupRevolution_FP.xcdatamodeld in Sources */,
 				4F695ADB24A19C7B00ECB91F /* ViewController.swift in Sources */,
+				4F695AF724A50BA500ECB91F /* Annotations.swift in Sources */,
 				4F695AD724A19C7B00ECB91F /* AppDelegate.swift in Sources */,
 				4F695AD924A19C7B00ECB91F /* SceneDelegate.swift in Sources */,
 				4F695AF424A509B200ECB91F /* MapViewController.swift in Sources */,
