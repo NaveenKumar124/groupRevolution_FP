@@ -159,6 +159,7 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
        func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
            playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
        }
+    
     @IBAction func btnSave(_ sender: UIButton) {
         
         if isNewNote{
@@ -368,11 +369,11 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
             dest.segueLongitude = newNote?.value(forKey: "long") as! Double
             
         }
-//        if let iv = segue.destination as? ViewController{
-//
-//            iv.image = noteImageView.image
-//
-//        }
+        if let iv = segue.destination as? ViewController{
+
+            iv.image = noteImageView.image
+
+        }
     }
     
 
