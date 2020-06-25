@@ -265,7 +265,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" translatesAutoresizingMaskIntoConstraints="NO" id="zuP-uF-Lck">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zuP-uF-Lck">
                                 <rect key="frame" x="30" y="291" width="315" height="150"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
