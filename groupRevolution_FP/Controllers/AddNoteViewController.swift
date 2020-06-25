@@ -264,6 +264,14 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
             print(error)
         }
     }
+    
+    func saveData(){
+        do{
+            try context!.save()
+        }catch{
+            print(error)
+        }
+    }
 
     /*
     // MARK: - Navigation
