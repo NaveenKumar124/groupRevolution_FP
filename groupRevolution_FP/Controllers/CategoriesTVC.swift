@@ -255,13 +255,14 @@ class CategoriesTVC: UITableViewController, UISearchBarDelegate {
         }
     }
     
-    //Adding 
+    //Adding
     func addData(name: String){
         let newFolder = NSEntityDescription.insertNewObject(forEntityName: "Categories", into: context!)
         newFolder.setValue(name, forKey: "catname")
         saveData()
     }
     
+    //Saving
     func saveData(){
         do{
             try context!.save()
