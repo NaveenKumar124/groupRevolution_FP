@@ -19,6 +19,7 @@
 		4F695AE324A19C7E00ECB91F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F695AE224A19C7E00ECB91F /* Assets.xcassets */; };
 		4F695AE624A19C7E00ECB91F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F695AE424A19C7E00ECB91F /* LaunchScreen.storyboard */; };
 		4F695AF224A2E02E00ECB91F /* CategoriesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F695AF124A2E02E00ECB91F /* CategoriesTVC.swift */; };
+		4F695AF424A509B200ECB91F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F695AF324A509B200ECB91F /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4F695AE524A19C7E00ECB91F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F695AE724A19C7E00ECB91F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F695AF124A2E02E00ECB91F /* CategoriesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTVC.swift; sourceTree = "<group>"; };
+		4F695AF324A509B200ECB91F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				128A480B24A29E870090732E /* NotesTableViewController.swift */,
 				128A480D24A2A4260090732E /* NotesTableViewCell.swift */,
 				120B53E324A419380083339D /* AddNoteViewController.swift */,
+				4F695AF324A509B200ECB91F /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				4F695ADB24A19C7B00ECB91F /* ViewController.swift in Sources */,
 				4F695AD724A19C7B00ECB91F /* AppDelegate.swift in Sources */,
 				4F695AD924A19C7B00ECB91F /* SceneDelegate.swift in Sources */,
+				4F695AF424A509B200ECB91F /* MapViewController.swift in Sources */,
 				120B53E424A419380083339D /* AddNoteViewController.swift in Sources */,
 				128A480C24A29E880090732E /* NotesTableViewController.swift in Sources */,
 				4F695AF224A2E02E00ECB91F /* CategoriesTVC.swift in Sources */,
