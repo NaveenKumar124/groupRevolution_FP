@@ -329,15 +329,50 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
         action.addAction(UIAlertAction(title: "cancel", style:.cancel, handler: nil ))
         self.present(action, animated: true, completion: nil)
     }
+    
+    func cameraNotAvailable(){
+        
+        let action = UIAlertController(title: "Camera not available", message: "", preferredStyle: .alert)
+        
+        action.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(action, animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+           
+           let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+           
+           // new note
+           noteImageView.image = image
+           
+           //old note
+           
+           picker.dismiss(animated: true, completion: nil)
+           saveImageToFile()
+           
+       }
+       
+       func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+           picker.dismiss(animated: true, completion: nil)
+       }
 
     /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        if let dest = segue.destination as? MapVC{
+            dest.segueLatitude = newNote?.value(forKey: "lat") as! Double
+            dest.segueLongitude = newNote?.value(forKey: "long") as! Double
+            
+        }
+        if let iv = segue.destination as? ViewController{
+            
+            iv.image = noteImageView.image
+            
+        }
+    }*/
+    
 
 }
