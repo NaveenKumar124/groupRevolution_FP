@@ -211,6 +211,7 @@ class CategoriesTVC: UITableViewController, UISearchBarDelegate {
         
     }
     
+    //Cancel Button functionality in Search Bar
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         mySearchBar.resignFirstResponder()
         mySearchBar.text = ""
