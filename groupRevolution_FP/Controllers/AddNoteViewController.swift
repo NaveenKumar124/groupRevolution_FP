@@ -272,6 +272,25 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
             print(error)
         }
     }
+    
+    func okAlert(title: String){
+        let titleString = NSAttributedString(string: title, attributes: [NSAttributedString.Key.foregroundColor: mainColor, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)])
+        
+        let alertController = UIAlertController(title: "" , message: nil, preferredStyle: .alert)
+        alertController.setValue(titleString, forKey: "attributedTitle")
+        
+        let okAction = UIAlertAction(title: "Okay", style: .default) { (action) in
+            if self.isToSave{
+                self.navigationController?.popViewController(animated: true)
+            }
+            self.isToSave = false
+        }
+        okAction.setValue(UIColor.black, forKey: "titleTextColor")
+        alertController.addAction(okAction)
+        
+        self.present(alertController, animated: true)
+        
+    }
 
     /*
     // MARK: - Navigation
