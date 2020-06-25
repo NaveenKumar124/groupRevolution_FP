@@ -81,6 +81,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         return MKOverlayRenderer()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+           navigationController?.isToolbarHidden = true
+       }
+       override func viewWillDisappear(_ animated: Bool) {
+           navigationController?.isToolbarHidden = false
+       }
 
     /*
     // MARK: - Navigation
