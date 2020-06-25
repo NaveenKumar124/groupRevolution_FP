@@ -179,6 +179,7 @@ class CategoriesTVC: UITableViewController, UISearchBarDelegate {
                 self.present(alertController, animated: false, completion: nil)
     }
     
+    //Adding Search Bar Functionality
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         let Nreq = NSFetchRequest<NSFetchRequestResult>(entityName: "Notes")
@@ -210,6 +211,7 @@ class CategoriesTVC: UITableViewController, UISearchBarDelegate {
         
     }
     
+    //Cancel Button functionality in Search Bar
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         mySearchBar.resignFirstResponder()
         mySearchBar.text = ""
@@ -218,6 +220,7 @@ class CategoriesTVC: UITableViewController, UISearchBarDelegate {
         tableView.reloadData()
     }
     
+    //Getting Count
     func getNotesCountInFolder(categoryName: String) -> Int{
          var count = 0
          
@@ -252,12 +255,14 @@ class CategoriesTVC: UITableViewController, UISearchBarDelegate {
         }
     }
     
+    //Adding
     func addData(name: String){
         let newFolder = NSEntityDescription.insertNewObject(forEntityName: "Categories", into: context!)
         newFolder.setValue(name, forKey: "catname")
         saveData()
     }
     
+    //Saving
     func saveData(){
         do{
             try context!.save()
@@ -266,6 +271,8 @@ class CategoriesTVC: UITableViewController, UISearchBarDelegate {
         }
     }
     
+    
+    //OK ALERT
     func okAlert(title: String, message: String){
         let titleString = NSAttributedString(string: title, attributes: [NSAttributedString.Key.foregroundColor: mainColor, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20) ])
         
@@ -280,6 +287,8 @@ class CategoriesTVC: UITableViewController, UISearchBarDelegate {
         
     }
     
+    
+    //Deleting Folder/Category
     func deleteNotesFromCategory(_ catagoryName: String) {
            
            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Notes")

@@ -74,7 +74,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0p-He-bG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3545" y="129"/>
+            <point key="canvasLocation" x="3484" y="129"/>
         </scene>
         <!--Notes-->
         <scene sceneID="uaD-gH-vCF">
@@ -164,7 +164,8 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem title="Item" image="plus" catalog="system" id="oAX-PT-Bh8">
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="CWQ-Xo-3Qf"/>
+                        <barButtonItem image="plus.square.fill" catalog="system" id="oAX-PT-Bh8">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="HcI-oH-3WS" kind="show" id="ipI-Em-hSD"/>
@@ -176,7 +177,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOA-EI-lpf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4466.666666666667" y="129.91071428571428"/>
+            <point key="canvasLocation" x="4268" y="129"/>
         </scene>
         <!--Add Notes-->
         <scene sceneID="WJD-B1-MOi">
@@ -194,8 +195,8 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAa-MW-vCN">
-                                <rect key="frame" x="210" y="74" width="42" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <rect key="frame" x="210" y="74" width="39.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -209,7 +210,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="zCN-wS-Hzw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -219,8 +220,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msW-To-PTW">
-                                <rect key="frame" x="32" y="259" width="45.5" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <rect key="frame" x="32" y="259" width="43.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -240,7 +241,7 @@
                                             <constraint firstAttribute="height" constant="60" id="amf-Bw-Ly3"/>
                                         </constraints>
                                         <color key="tintColor" red="0.20539060240000001" green="0.469960928" blue="0.96475261450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" image="recordingtape" catalog="system">
+                                        <state key="normal" image="mic.circle.fill" catalog="system">
                                             <color key="titleColor" red="0.20539060240000001" green="0.469960928" blue="0.96475261450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
                                         </state>
@@ -255,7 +256,7 @@
                                             <constraint firstAttribute="width" constant="60" id="5EJ-lX-WpQ"/>
                                         </constraints>
                                         <color key="tintColor" red="0.20539060240000001" green="0.469960928" blue="0.96475261450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" image="playpause.fill" catalog="system">
+                                        <state key="normal" image="play.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
                                         </state>
                                         <connections>
@@ -264,14 +265,14 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zuP-uF-Lck">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" translatesAutoresizingMaskIntoConstraints="NO" id="zuP-uF-Lck">
                                 <rect key="frame" x="30" y="291" width="315" height="150"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="RrS-l8-ChW"/>
                                 </constraints>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mV-fa-thZ">
@@ -330,7 +331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIh-fF-lHB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5228.985507246377" y="130.58035714285714"/>
+            <point key="canvasLocation" x="5055" y="128"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nao-Vz-6PQ">
@@ -364,10 +365,9 @@
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="images.png" width="225" height="225"/>
+        <image name="mic.circle.fill" catalog="system" width="128" height="121"/>
         <image name="paperplane" catalog="system" width="128" height="121"/>
-        <image name="playpause.fill" catalog="system" width="128" height="73"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="plus.square.fill" catalog="system" width="128" height="114"/>
-        <image name="recordingtape" catalog="system" width="128" height="60"/>
     </resources>
 </document>
