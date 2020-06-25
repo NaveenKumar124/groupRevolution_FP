@@ -271,6 +271,8 @@ class CategoriesTVC: UITableViewController, UISearchBarDelegate {
         }
     }
     
+    
+    //OK ALERT
     func okAlert(title: String, message: String){
         let titleString = NSAttributedString(string: title, attributes: [NSAttributedString.Key.foregroundColor: mainColor, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20) ])
         
