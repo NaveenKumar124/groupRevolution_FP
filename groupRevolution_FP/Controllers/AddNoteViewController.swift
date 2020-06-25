@@ -6,10 +6,11 @@
 //  Copyright © 2020 Naveen Kumar. All rights reserved.
 //
 
-import AVFoundation
+
 import CoreData
 import CoreLocation
 import UIKit
+import AVFoundation
 
 class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate , AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     
@@ -176,7 +177,7 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
                 }
                 
                 if !alreadyExists {
-                    if (txtTitle.text!.isEmpty || txtDescription.text! == "Write note...." || txtDescription.text!.isEmpty || catagoryTextField.text!.isEmpty){
+                    if (txtTitle.text!.isEmpty || txtDescription.text! == "Write Note...." || txtDescription.text!.isEmpty || catagoryTextField.text!.isEmpty){
                         // empty field
                         okAlert(title: "None of the fields can be empty!!")
                         
@@ -186,7 +187,7 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
                     }
                     
                 } else{
-                    okAlert(title: "Note with name '\(txtTitle.text!)' already exists!")
+                    okAlert(title: "Note With name '\(txtTitle.text!)' Already Exists!")
                     isNewNote = true
                 }
             }catch{
@@ -376,3 +377,25 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
     
 
 }
+
+extension AddNoteViewController: UITextViewDelegate {
+    
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if txtDescription.text == "Write Note...."{
+            txtDescription.text = ""
+        }
+        txtDescription.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isToolbarHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.isToolbarHidden = false
+    }
+    
+}
+
