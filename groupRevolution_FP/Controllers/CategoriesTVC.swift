@@ -220,6 +220,7 @@ class CategoriesTVC: UITableViewController, UISearchBarDelegate {
         tableView.reloadData()
     }
     
+    //Getting Count
     func getNotesCountInFolder(categoryName: String) -> Int{
          var count = 0
          
