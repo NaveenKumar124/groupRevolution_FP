@@ -226,6 +226,34 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     }
     
+    func updateCatagoryList(){
+        var catagoryPresent = false
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Categories")
+        request.returnsObjectsAsFaults = false
+        
+        // we find our data
+        do{
+            let results = try context?.fetch(request) as! [NSManagedObject]
+            
+            for r in results{
+                if catagoryTextField.text! == (r.value(forKey: "catname") as! String) {
+                    catagoryPresent = true;
+                    break
+                }
+            }
+        } catch{
+            print("Error2...\(error)")
+        }
+        
+        if !catagoryPresent{
+            
+            let newFolder = NSEntityDescription.insertNewObject(forEntityName: "Categories", into: context!)
+            newFolder.setValue(catagoryTextField.text!, forKey: "catname")
+            saveData()
+        }
+    }
+
+    
     
     /*
     // MARK: - Navigation
