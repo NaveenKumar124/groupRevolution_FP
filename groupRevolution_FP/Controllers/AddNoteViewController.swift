@@ -6,7 +6,7 @@
 //  Copyright © 2020 Naveen Kumar. All rights reserved.
 //
 
-
+import Foundation
 import CoreData
 import CoreLocation
 import UIKit
@@ -17,6 +17,8 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var txtTitle: UITextField!
     @IBOutlet weak var catagoryTextField: UITextField!
     @IBOutlet weak var txtDescription: UITextView!
+    
+    var newNote: NSManagedObject?
     
     @IBOutlet weak var noteImageView: UIImageView!
     
@@ -32,7 +34,7 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
     var isToSave = false
     var noteTitle: String?
     
-    var newNote: NSManagedObject?
+    
     
     var isPlaying = false
     var isRecording = false
@@ -160,27 +162,29 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
            playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
        }
     
+    // MARK: Saving Note on Button Click
+    
     @IBAction func btnSave(_ sender: UIButton) {
         
         if isNewNote{
-            
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Notes")
-            do{
-                let results = try self.context!.fetch(request)
-                var alreadyExists = false
-                if results.count > 0{
-                    for result in results as! [NSManagedObject]{
-                        if txtTitle.text! == result.value(forKey: "title") as! String{
-                            alreadyExists = true
-                            break
-                        }
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Notes")
+        do{
+            let results = try self.context!.fetch(request)
+            var alreadyExists = false
+            if results.count > 0{
+                for result in results as! [NSManagedObject]{
+                    if txtTitle.text! == result.value(forKey: "title") as! String{
+                        alreadyExists = true
+                        break
                     }
                 }
+            }
                 
                 if !alreadyExists {
                     if (txtTitle.text!.isEmpty || txtDescription.text! == "Write Note...." || txtDescription.text!.isEmpty || catagoryTextField.text!.isEmpty){
                         // empty field
-                        okAlert(title: "None of the fields can be empty!!")
+                        okAlert(title: "None Of The Fields Can Be Empty!!")
                         
                     }else{
                         self.addData()
@@ -188,7 +192,7 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
                     }
                     
                 } else{
-                    okAlert(title: "Note With name '\(txtTitle.text!)' Already Exists!")
+                    okAlert(title: "Note With Name '\(txtTitle.text!)' Already Exists!")
                     isNewNote = true
                 }
             }catch{
