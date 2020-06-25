@@ -280,6 +280,8 @@ class CategoriesTVC: UITableViewController, UISearchBarDelegate {
         
     }
     
+    
+    //Deleting Folder/Category
     func deleteNotesFromCategory(_ catagoryName: String) {
            
            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Notes")
