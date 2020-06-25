@@ -289,7 +289,45 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
         alertController.addAction(okAction)
         
         self.present(alertController, animated: true)
+    }
+    
+    // MARK: - Image functions
+    
+    @objc func choosePhoto(){
         
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        
+        let action = UIAlertController(title: "Photo Source", message: "Choose a Source", preferredStyle: .actionSheet)
+        
+        action.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
+            
+            if UIImagePickerController.isSourceTypeAvailable(.camera){
+                imagePicker.sourceType = .camera
+                switch AVCaptureDevice.authorizationStatus(for: .video) {
+                    case .authorized: // The user has previously granted access to the camera.
+                        self.present(imagePicker, animated: true, completion: nil)
+                    case .notDetermined: // The user has not yet been asked for camera access.
+                        AVCaptureDevice.requestAccess(for: .video) { granted in
+                            if granted {
+                                self.present(imagePicker, animated: true, completion: nil)
+                            }
+                        }
+                    default:
+                        return
+                }
+            }
+            else{
+                self.cameraNotAvailable()
+            }
+        }))
+        action.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (action:UIAlertAction) in
+            imagePicker.sourceType = .photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+            
+        }))
+        action.addAction(UIAlertAction(title: "cancel", style:.cancel, handler: nil ))
+        self.present(action, animated: true, completion: nil)
     }
 
     /*
