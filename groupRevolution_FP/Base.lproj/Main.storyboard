@@ -351,11 +351,17 @@
                                 <rect key="frame" x="322" y="527" width="37" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="mappin.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="btnShowRoute:" destination="rZs-ry-epT" eventType="touchUpInside" id="ZZc-U2-yR5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAd-Ru-F2H" userLabel="NavigationButton">
                                 <rect key="frame" x="318" y="576" width="45" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="paperplane" catalog="system"/>
+                                <connections>
+                                    <action selector="navButtonPressed:" destination="rZs-ry-epT" eventType="touchUpInside" id="DA8-ed-1dF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
