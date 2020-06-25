@@ -32,7 +32,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     
     @IBAction func btnShowRoute(_ sender: UIButton) {
-        
+        let dest = CLLocationCoordinate2D(latitude: segueLatitude, longitude: segueLongitude)
+            getRoute(destination: dest)
     }
     
     @IBAction func navButtonPressed(_ sender: UIButton) {
