@@ -252,9 +252,19 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
             saveData()
         }
     }
+    
+    func saveImageToFile(){
+        let url = URL(fileURLWithPath: getFilePath("/\(txtTitle.text!)_img.txt"))
+        
+        // write to path
+        do{
+            try noteImageView.image?.pngData()!.write(to: url)
+            //.write(toFile: filePath, atomically: true, encoding: .utf8)
+        }catch{
+            print(error)
+        }
+    }
 
-    
-    
     /*
     // MARK: - Navigation
 
