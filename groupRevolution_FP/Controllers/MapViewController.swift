@@ -57,14 +57,45 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     
-    func getDirection(dest: CLLocationCoordinate2D){
-        
-        let source = MKMapItem(placemark:MKPlacemark(coordinate: mapView.userLocation.coordinate))
-        let dest = MKMapItem(placemark: MKPlacemark(coordinate: dest))
-        
-        MKMapItem.openMaps(with: [source , dest], launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving ])
-        
-    }
+    func getRoute(destination:CLLocationCoordinate2D ){
+           
+           let destinationRequest = MKDirections.Request()
+           let sourceCoordinates = mapView.userLocation.coordinate
+           
+           let source = CLLocationCoordinate2DMake((sourceCoordinates.latitude), (sourceCoordinates.longitude))
+           let destination = CLLocationCoordinate2DMake(destination.latitude, destination.longitude)
+           
+           let sourcePlacemark = MKPlacemark(coordinate: source)
+           let destinationPlacemark = MKPlacemark(coordinate: destination)
+           
+           let finalSource = MKMapItem(placemark: sourcePlacemark)
+           let finalDestination = MKMapItem(placemark: destinationPlacemark)
+           
+           destinationRequest.source = finalSource
+           destinationRequest.destination = finalDestination
+           destinationRequest.transportType = .automobile
+           
+           let direction = MKDirections(request: destinationRequest)
+           
+           direction.calculate { (responce, error) in
+               
+               guard let responce = responce else {
+                   if let error = error {
+                       print(error)
+                       
+                   }
+                   return
+               }
+               let route = responce.routes[0]
+               
+               self.mapView.addOverlay(route.polyline, level: .aboveRoads)
+               self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+               
+               
+           }
+       }
+    
+   
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         
@@ -81,12 +112,32 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         return MKOverlayRenderer()
     }
     
+   func getDirection(dest: CLLocationCoordinate2D){
+          
+          let source = MKMapItem(placemark:MKPlacemark(coordinate: mapView.userLocation.coordinate))
+          let dest = MKMapItem(placemark: MKPlacemark(coordinate: dest))
+          
+          MKMapItem.openMaps(with: [source , dest], launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving ])
+          
+      }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+           if annotation is MKUserLocation{
+               return nil
+           }
+           
+           let ann = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pinAnnotation")
+           
+           return ann
+           
+       }
+    
     override func viewWillAppear(_ animated: Bool) {
-           navigationController?.isToolbarHidden = true
-       }
-       override func viewWillDisappear(_ animated: Bool) {
-           navigationController?.isToolbarHidden = false
-       }
+              navigationController?.isToolbarHidden = true
+          }
+          override func viewWillDisappear(_ animated: Bool) {
+              navigationController?.isToolbarHidden = false
+          }
 
     /*
     // MARK: - Navigation
