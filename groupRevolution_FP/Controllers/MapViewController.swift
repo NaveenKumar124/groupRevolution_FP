@@ -12,7 +12,9 @@ import CoreLocation
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
+    @IBOutlet weak var navigationButton: UIButton!
     
+    @IBOutlet weak var mapView: MKMapView!
     var locationManager = CLLocationManager()
     var segueLongitude: Double!
     var segueLatitude: Double!
@@ -22,6 +24,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
         // Do any additional setup after loading the view.
     }
+    
     
     
     

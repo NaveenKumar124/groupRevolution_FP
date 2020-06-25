@@ -179,7 +179,7 @@
             </objects>
             <point key="canvasLocation" x="4268" y="129"/>
         </scene>
-        <!--Add Notes-->
+        <!--Add Note-->
         <scene sceneID="WJD-B1-MOi">
             <objects>
                 <viewController id="HcI-oH-3WS" customClass="AddNoteViewController" customModule="groupRevolution_FP" customModuleProvider="target" sceneMemberID="viewController">
@@ -314,9 +314,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lmj-gb-MDW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Notes" id="SBG-L9-Z9E">
+                    <navigationItem key="navigationItem" title="Add Note" id="SBG-L9-Z9E">
                         <barButtonItem key="rightBarButtonItem" image="paperplane" catalog="system" id="byf-Vd-1Kq">
                             <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <connections>
+                                <segue destination="rZs-ry-epT" kind="show" id="1z4-nX-JPz"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -332,6 +335,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIh-fF-lHB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5055" y="128"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="KQg-3Q-51S">
+            <objects>
+                <viewController id="rZs-ry-epT" customClass="MapViewController" customModule="groupRevolution_FP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JHY-GX-QRN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zOk-s5-nlp">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kb9-vP-tZm">
+                                <rect key="frame" x="322" y="527" width="37" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="mappin.circle.fill" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAd-Ru-F2H" userLabel="NavigationButton">
+                                <rect key="frame" x="318" y="576" width="45" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="paperplane" catalog="system"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zOk-s5-nlp" firstAttribute="leading" secondItem="aLy-rY-TTf" secondAttribute="leading" id="BjF-1d-Gw3"/>
+                            <constraint firstItem="aLy-rY-TTf" firstAttribute="bottom" secondItem="zOk-s5-nlp" secondAttribute="bottom" id="WkL-W9-Vzu"/>
+                            <constraint firstItem="zOk-s5-nlp" firstAttribute="top" secondItem="aLy-rY-TTf" secondAttribute="top" id="hQi-du-NWE"/>
+                            <constraint firstItem="aLy-rY-TTf" firstAttribute="trailing" secondItem="zOk-s5-nlp" secondAttribute="trailing" id="yBk-6h-cHT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aLy-rY-TTf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="f6e-hy-neZ"/>
+                    <connections>
+                        <outlet property="mapView" destination="zOk-s5-nlp" id="LVU-IM-La2"/>
+                        <outlet property="navigationButton" destination="cAd-Ru-F2H" id="Drn-bB-hFc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I5H-Wd-Fvr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5864.8000000000002" y="124.58770614692655"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nao-Vz-6PQ">
@@ -365,6 +409,7 @@
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="images.png" width="225" height="225"/>
+        <image name="mappin.circle.fill" catalog="system" width="128" height="121"/>
         <image name="mic.circle.fill" catalog="system" width="128" height="121"/>
         <image name="paperplane" catalog="system" width="128" height="121"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
