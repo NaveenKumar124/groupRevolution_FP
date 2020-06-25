@@ -255,6 +255,7 @@ class CategoriesTVC: UITableViewController, UISearchBarDelegate {
         }
     }
     
+    //Adding 
     func addData(name: String){
         let newFolder = NSEntityDescription.insertNewObject(forEntityName: "Categories", into: context!)
         newFolder.setValue(name, forKey: "catname")
