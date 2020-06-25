@@ -179,6 +179,7 @@ class CategoriesTVC: UITableViewController, UISearchBarDelegate {
                 self.present(alertController, animated: false, completion: nil)
     }
     
+    //Adding Search Bar Functionality
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         let Nreq = NSFetchRequest<NSFetchRequestResult>(entityName: "Notes")
