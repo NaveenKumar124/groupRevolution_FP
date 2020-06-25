@@ -77,6 +77,23 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
                 if !granted{}
             }
         }
+        
+        let hideKeyboard = UITapGestureRecognizer(target: self, action: #selector(onTapped))
+        view.addGestureRecognizer(hideKeyboard)
+        
+        // tap gesture for seklecting image
+        let tapG = UITapGestureRecognizer(target: self, action: #selector(choosePhoto))
+        noteImageView.addGestureRecognizer(tapG)
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+
+        do {
+            try recordingSession.setCategory(.playAndRecord, mode: .default)
+            try recordingSession.setActive(true)
+        } catch {}
     }
     
     func showCurrentNote(_ title: String){
