@@ -20,6 +20,7 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     var newNote: NSManagedObject?
     
+    
     @IBOutlet weak var noteImageView: UIImageView!
     
     @IBOutlet weak var recordButton: UIButton!
@@ -145,7 +146,7 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func recordButtonPressed(_ sender: UIButton) {
         if !isRecording {
             playButton.isHidden = true
-            recordButton.backgroundColor = #colorLiteral(red: 0.006370984018, green: 0.4774341583, blue: 0.9984987378, alpha: 1)
+            recordButton.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
             
             if audioRecorder == nil {
                 //self.records += 1
