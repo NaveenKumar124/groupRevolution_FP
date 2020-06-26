@@ -68,7 +68,8 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
             // show all data to user
            
             icMap.isEnabled = true
-            navigationItem.title = "Edit note"
+            navigationItem.title = "Edit Note"
+            
         }else{
             playButton.isHidden = true
             icMap.isEnabled = false
