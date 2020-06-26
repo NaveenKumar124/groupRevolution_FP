@@ -273,7 +273,7 @@ class AddNoteViewController: UIViewController, UIImagePickerControllerDelegate, 
         saveData()
         
         isToSave = true
-        okAlert(title: isNewNote ? "Note saved successfully!!" : "Updated successfully!!")
+        okAlert(title: isNewNote ? "Note Saved Successfully!!" : "Note Updated Successfully!!")
     
     }
     
